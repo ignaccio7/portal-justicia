@@ -132,24 +132,24 @@ export default function SimulatorView({
             >
               <Brain className="text-blue-400" size={48} />
             </motion.div>
-            <h2 className="text-3xl font-bold text-white mb-2">
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
               Simulador de Rutas Legales
             </h2>
-            <p className="text-slate-300">
+            <p className="text-slate-600 dark:text-slate-300">
               Describe tu problema legal y te mostraremos las posibles rutas que
               podría seguir
             </p>
           </div>
 
-          <div className="backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 bg-slate-900/30">
-            <label className="block text-slate-200 font-semibold mb-3">
+          <div className="backdrop-blur-xl border border-slate-200 dark:border-slate-700/50 rounded-2xl p-8 bg-white/60 dark:bg-slate-900/30">
+            <label className="block text-slate-700 dark:text-slate-200 font-semibold mb-3">
               ¿Qué problema legal enfrentas?
             </label>
             <textarea
               value={legalProblem}
               onChange={(e) => setLegalProblem(e.target.value)}
               placeholder="Describe detalladamente tu situación legal..."
-              className="w-full h-40 bg-slate-800/50 border border-slate-600 rounded-lg p-4 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/50 resize-none"
+              className="w-full h-40 bg-slate-100 dark:bg-slate-800/50 border border-slate-300 dark:border-slate-600 rounded-lg p-4 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/50 resize-none"
             />
 
             <motion.button
@@ -174,10 +174,10 @@ export default function SimulatorView({
           className="space-y-6"
         >
           <div>
-            <h2 className="text-2xl font-bold text-white mb-2">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
               Casos Similares Históricos
             </h2>
-            <p className="text-slate-300">
+            <p className="text-slate-600 dark:text-slate-300">
               Estos casos formarán la base de tu simulación
             </p>
           </div>
@@ -188,13 +188,13 @@ export default function SimulatorView({
                 key={caseItem.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="backdrop-blur-xl border border-slate-700/50 rounded-xl p-4 bg-slate-900/30 hover:bg-slate-900/50 transition-all"
+                className="backdrop-blur-xl border border-slate-200 dark:border-slate-700/50 rounded-xl p-4 bg-white/60 dark:bg-slate-900/30 hover:bg-white/80 dark:hover:bg-slate-900/50 transition-all"
               >
-                <h3 className="font-bold text-white mb-2">{caseItem.title}</h3>
-                <p className="text-sm text-slate-400 mb-3">{caseItem.jurisdiction}</p>
+                <h3 className="font-bold text-slate-900 dark:text-white mb-2">{caseItem.title}</h3>
+                <p className="text-sm text-slate-500 dark:text-slate-400 mb-3">{caseItem.jurisdiction}</p>
                 <div className="flex justify-between items-center">
                   <span className="text-xs text-slate-500">{caseItem.year}</span>
-                  <span className="px-2 py-1 text-xs rounded-full bg-green-500/20 text-green-300">
+                  <span className="px-2 py-1 text-xs rounded-full bg-green-500/20 text-green-600 dark:text-green-300">
                     ✓ Completado
                   </span>
                 </div>
@@ -229,10 +229,10 @@ export default function SimulatorView({
           >
             <AlertCircle className="text-yellow-400 flex-shrink-0 mt-1" size={20} />
             <div className="text-sm">
-              <p className="font-semibold text-yellow-300 mb-1">
+              <p className="font-semibold text-yellow-600 dark:text-yellow-300 mb-1">
                 ⚠️ Disclaimer Importante
               </p>
-              <p className="text-yellow-200">
+              <p className="text-yellow-700 dark:text-yellow-200">
                 Esto es una simulación basada en IA, NO asegura resultados legales.
                 Consulta con un profesional legal certificado antes de tomar
                 decisiones importantes.
@@ -250,20 +250,20 @@ export default function SimulatorView({
             ].map((item, idx) => (
               <motion.div
                 key={idx}
-                className="backdrop-blur-xl border border-slate-700/50 rounded-lg p-4 bg-slate-900/30 text-center"
+                className="backdrop-blur-xl border border-slate-200 dark:border-slate-700/50 rounded-lg p-4 bg-white/60 dark:bg-slate-900/30 text-center"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: idx * 0.1 }}
               >
-                <p className="text-xs text-slate-400 mb-1">{item.label}</p>
-                <p className="text-lg font-bold text-white">{item.value}</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mb-1">{item.label}</p>
+                <p className="text-lg font-bold text-slate-900 dark:text-white">{item.value}</p>
               </motion.div>
             ))}
           </div>
 
           {/* Grafo simulado */}
           <div>
-            <h3 className="text-xl font-bold text-white mb-6">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6">
               Grafo Visual de Ruta Simulada
             </h3>
             <CaseGraphVisualization
@@ -274,7 +274,7 @@ export default function SimulatorView({
 
           {/* Abogados recomendados */}
           <div>
-            <h3 className="text-xl font-bold text-white mb-6">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6">
               Abogados Expertos Recomendados para Este Flujo
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -291,7 +291,7 @@ export default function SimulatorView({
 
           <motion.button
             onClick={() => setStep(1)}
-            className="w-full py-3 bg-slate-700/50 text-white font-semibold rounded-lg hover:bg-slate-600 transition-colors"
+            className="w-full py-3 bg-slate-100 text-slate-700 font-semibold rounded-lg hover:bg-slate-200 dark:bg-slate-700/50 dark:text-white dark:hover:bg-slate-600 transition-colors"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >

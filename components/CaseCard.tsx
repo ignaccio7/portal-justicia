@@ -38,15 +38,15 @@ export default function CaseCard({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <div className={`${config.bg} backdrop-blur-xl border border-slate-700/50 rounded-xl p-6 hover:border-blue-500/50 transition-all shadow-lg hover:shadow-2xl hover:shadow-blue-500/10`}>
+      <div className={`${config.bg} backdrop-blur-xl border border-slate-200 dark:border-slate-700/50 rounded-xl p-6 hover:border-blue-500/50 transition-all shadow-lg hover:shadow-2xl hover:shadow-blue-500/10`}>
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-blue-500/20 rounded-lg">
               <Scale className="text-blue-400" size={20} />
             </div>
             <div>
-              <h3 className="font-bold text-white text-lg">{title}</h3>
-              <p className="text-sm text-slate-400">{id}</p>
+              <h3 className="font-bold text-slate-900 dark:text-white text-lg">{title}</h3>
+              <p className="text-sm text-slate-500 dark:text-slate-400">{id}</p>
             </div>
           </div>
           <span
@@ -56,7 +56,7 @@ export default function CaseCard({
           </span>
         </div>
 
-        <div className="space-y-2 text-sm text-slate-300">
+        <div className="space-y-2 text-sm text-slate-600 dark:text-slate-300">
           <div className="flex items-center gap-2">
             <MapPin size={16} className="text-blue-400" />
             <span>{jurisdiction}</span>
@@ -67,7 +67,7 @@ export default function CaseCard({
           </div>
         </div>
 
-        <div className="mt-4 pt-4 border-t border-slate-700/50 text-xs text-slate-400">
+        <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700/50 text-xs text-slate-500 dark:text-slate-400">
           Haz clic para ver detalles →
         </div>
       </div>

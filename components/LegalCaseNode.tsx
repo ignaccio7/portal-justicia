@@ -109,7 +109,7 @@ function LegalCaseNode({ data }: NodeProps) {
 
         {/* Title + Actors */}
         <div className="flex flex-col justify-center pt-1 min-w-0">
-          <h3 className="text-sm font-bold text-white leading-snug group-hover:text-blue-200 transition-colors">
+          <h3 className="text-sm font-bold text-slate-900 dark:text-white leading-snug group-hover:text-blue-200 transition-colors">
             {title}
           </h3>
           <p className="text-xs text-slate-500 mt-0.5 mb-2">{formattedDate}</p>
@@ -129,7 +129,7 @@ function LegalCaseNode({ data }: NodeProps) {
                 className="nodrag nopan px-2.5 py-1 rounded-md text-xs font-medium transition-all cursor-pointer relative z-10"
                 style={{
                   background: 'rgba(59,130,246,0.12)',
-                  color: '#93c5fd',
+                  color: '#2563eb',
                   border: '1px solid rgba(59,130,246,0.25)',
                 }}
                 whileHover={{

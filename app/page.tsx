@@ -209,7 +209,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50 text-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 dark:text-white">
       <Navigation currentView={currentView} onNavigate={(view) => {
         setCurrentView(view);
         setSelectedCaseId(null);
@@ -235,7 +235,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
               >
-                <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-slate-700/50 p-12 lg:p-20 backdrop-blur-xl">
+                <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-slate-300/70 dark:border-slate-700/50 p-12 lg:p-20 backdrop-blur-xl">
                   <motion.div
                     className="absolute inset-0 opacity-30 bg-gradient-to-r from-blue-500 to-purple-500 blur-3xl"
                     animate={{ scale: [1, 1.1, 1] }}
@@ -249,10 +249,10 @@ export default function Home() {
                     >
                       <Sparkles className="text-blue-400" size={48} />
                     </motion.div>
-                    <h1 className="text-5xl lg:text-6xl font-bold mb-4 text-white">
+                    <h1 className="text-5xl lg:text-6xl font-bold mb-4 text-slate-900 dark:text-white">
                       Rutas de Justicia
                     </h1>
-                    <p className="text-xl text-slate-300 mb-8 max-w-2xl">
+                    <p className="text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-2xl">
                       Plataforma cívica interactiva que te guía a través de los procesos
                       legales complejos con claridad, transparencia y precisión.
                     </p>
@@ -274,7 +274,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                <h2 className="text-3xl font-bold mb-8 text-white">
+                <h2 className="text-3xl font-bold mb-8 text-slate-900 dark:text-white">
                   Casos de Alto Impacto Recientes
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -301,13 +301,13 @@ export default function Home() {
               className="p-6 lg:p-12"
             >
               <motion.h1
-                className="text-4xl font-bold mb-2 text-white"
+                className="text-4xl font-bold mb-2 text-slate-900 dark:text-white"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
               >
                 Portal de Casos
               </motion.h1>
-              <p className="text-slate-300 mb-12">
+              <p className="text-slate-600 dark:text-slate-300 mb-12">
                 Explora todos los casos documentados en nuestra plataforma
               </p>
 
@@ -334,13 +334,13 @@ export default function Home() {
               className="p-6 lg:p-12"
             >
               <motion.h1
-                className="text-4xl font-bold mb-2 text-white"
+                className="text-4xl font-bold mb-2 text-slate-900 dark:text-white"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
               >
                 Directorio de Profesionales
               </motion.h1>
-              <p className="text-slate-300 mb-12">
+              <p className="text-slate-600 dark:text-slate-300 mb-12">
                 Conoce a los expertos legales que están transformando el sistema de justicia
               </p>
 
@@ -370,13 +370,13 @@ export default function Home() {
               className="p-6 lg:p-12"
             >
               <motion.h1
-                className="text-4xl font-bold mb-2 text-white"
+                className="text-4xl font-bold mb-2 text-slate-900 dark:text-white"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
               >
                 Biblioteca Legal
               </motion.h1>
-              <p className="text-slate-300 mb-12">
+              <p className="text-slate-600 dark:text-slate-300 mb-12">
                 Accede a recursos legales, videos educativos y documentos de referencia
               </p>
 
@@ -384,7 +384,7 @@ export default function Home() {
                 {LIBRARY_ITEMS.map((item, idx) => (
                   <motion.div
                     key={item.id}
-                    className="backdrop-blur-xl border border-slate-700/50 rounded-xl p-6 hover:border-slate-600 transition-all cursor-pointer group"
+                    className="backdrop-blur-xl border border-slate-200 dark:border-slate-700/50 rounded-xl p-6 hover:border-slate-400 dark:hover:border-slate-600 transition-all cursor-pointer group"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.05 }}
@@ -392,18 +392,18 @@ export default function Home() {
                   >
                     <div className="flex items-start gap-4">
                       <motion.div
-                        className="p-3 bg-slate-800/50 rounded-lg group-hover:bg-blue-500/20 transition-colors"
+                        className="p-3 bg-slate-100 dark:bg-slate-800/50 rounded-lg group-hover:bg-blue-500/20 transition-colors"
                         whileHover={{ rotate: 12 }}
                       >
                         <BookOpen className="text-blue-400" size={24} />
                       </motion.div>
                       <div className="flex-1">
-                        <h3 className="font-bold text-white mb-1">{item.title}</h3>
+                        <h3 className="font-bold text-slate-900 dark:text-white mb-1">{item.title}</h3>
                         <div className="flex justify-between">
-                          <span className="text-xs bg-slate-800/50 text-slate-300 px-2 py-1 rounded">
+                          <span className="text-xs bg-slate-100 dark:bg-slate-800/50 text-slate-600 dark:text-slate-300 px-2 py-1 rounded">
                             {item.type}
                           </span>
-                          <span className="text-xs text-slate-400">{item.year}</span>
+                          <span className="text-xs text-slate-500 dark:text-slate-400">{item.year}</span>
                         </div>
                       </div>
                     </div>
@@ -427,20 +427,20 @@ export default function Home() {
                   setCurrentView('casos');
                   setSelectedCaseId(null);
                 }}
-                className="mb-8 px-4 py-2 text-slate-300 hover:text-white transition-colors flex items-center gap-2"
+                className="mb-8 px-4 py-2 text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors flex items-center gap-2"
                 whileHover={{ x: -4 }}
               >
                 ← Volver a Casos
               </motion.button>
 
               <motion.h1
-                className="text-4xl font-bold mb-2 text-white"
+                className="text-4xl font-bold mb-2 text-slate-900 dark:text-white"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
               >
                 {selectedCase.title}
               </motion.h1>
-              <p className="text-slate-300 mb-12">{selectedCase.jurisdiction}</p>
+              <p className="text-slate-600 dark:text-slate-300 mb-12">{selectedCase.jurisdiction}</p>
 
               <CaseGraphVisualization
                 nodes={CASE_NODES}
@@ -475,23 +475,23 @@ export default function Home() {
                   setCurrentView('abogados');
                   setSelectedProfessionalId(null);
                 }}
-                className="mb-8 px-4 py-2 text-slate-300 hover:text-white transition-colors flex items-center gap-2"
+                className="mb-8 px-4 py-2 text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors flex items-center gap-2"
                 whileHover={{ x: -4 }}
               >
                 ← Volver a Profesionales
               </motion.button>
 
               <motion.div
-                className="backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 bg-slate-900/30 mb-12"
+                className="backdrop-blur-xl border border-slate-200 dark:border-slate-700/50 rounded-2xl p-8 bg-white/60 dark:bg-slate-900/30 mb-12"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
               >
                 <div className="flex items-start justify-between mb-6">
                   <div>
-                    <h1 className="text-4xl font-bold text-white mb-2">
+                    <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-2">
                       {selectedProfessional.name}
                     </h1>
-                    <p className="text-lg text-slate-300">
+                    <p className="text-lg text-slate-600 dark:text-slate-300">
                       {selectedProfessional.role === 'judge' && 'Juez/Jueza'}
                       {selectedProfessional.role === 'lawyer' && 'Abogado/Abogada'}
                       {selectedProfessional.role === 'prosecutor' && 'Fiscal'}
@@ -501,7 +501,7 @@ export default function Home() {
                     className="text-right"
                     whileHover={{ scale: 1.05 }}
                   >
-                    <p className="text-sm text-slate-400 mb-2">Tasa de Éxito</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400 mb-2">Tasa de Éxito</p>
                     <p className="text-4xl font-bold text-green-400">
                       {selectedProfessional.successRate}%
                     </p>
@@ -509,20 +509,20 @@ export default function Home() {
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="p-4 rounded-lg bg-slate-800/50">
-                    <p className="text-slate-400 text-sm mb-1">Casos aaen Plataforma</p>
-                    <p className="text-2xl font-bold text-white">
+                  <div className="p-4 rounded-lg bg-slate-100 dark:bg-slate-800/50">
+                    <p className="text-slate-500 dark:text-slate-400 text-sm mb-1">Casos en Plataforma</p>
+                    <p className="text-2xl font-bold text-slate-900 dark:text-white">
                       {selectedProfessional.casesCount}
                     </p>
                   </div>
-                  <div className="p-4 rounded-lg bg-slate-800/50">
-                    <p className="text-slate-400 text-sm mb-1">Especialidad</p>
-                    <p className="text-lg font-bold text-blue-400">Derecho Familiar</p>
+                  <div className="p-4 rounded-lg bg-slate-100 dark:bg-slate-800/50">
+                    <p className="text-slate-500 dark:text-slate-400 text-sm mb-1">Especialidad</p>
+                    <p className="text-lg font-bold text-blue-600 dark:text-blue-400">Derecho Familiar</p>
                   </div>
                 </div>
               </motion.div>
 
-              <h2 className="text-2xl font-bold text-white mb-6">Casos en los que ha Intervenido</h2>
+              <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Casos en los que ha Intervenido</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {CASES.filter((c) =>
                   CASE_NODES.some((n) =>
@@ -542,7 +542,7 @@ export default function Home() {
                     </div>
                   ))
                 ) : (
-                  <p className="text-slate-400 col-span-full">
+                  <p className="text-slate-500 dark:text-slate-400 col-span-full">
                     No hay casos asociados a este profesional en esta simulación.
                   </p>
                 )}
