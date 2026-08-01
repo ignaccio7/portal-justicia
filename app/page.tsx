@@ -283,7 +283,7 @@ export default function Home() {
                       key={caseItem.id}
                       onClick={() => handleCaseClick(caseItem.id)}
                     >
-                      <CaseCard {...caseItem} onClick={() => {}} />
+                      <CaseCard {...caseItem} onClick={() => { }} />
                     </div>
                   ))}
                 </div>
@@ -317,7 +317,7 @@ export default function Home() {
                     key={caseItem.id}
                     onClick={() => handleCaseClick(caseItem.id)}
                   >
-                    <CaseCard {...caseItem} onClick={() => {}} />
+                    <CaseCard {...caseItem} onClick={() => { }} />
                   </div>
                 ))}
               </div>
@@ -352,7 +352,7 @@ export default function Home() {
                   >
                     <ProfessionalCard
                       {...professional}
-                      onClick={() => {}}
+                      onClick={() => { }}
                     />
                   </div>
                 ))}
@@ -447,7 +447,12 @@ export default function Home() {
                 highlightActor={highlightActor}
                 onActorClick={(actor) => {
                   setHighlightActor(actor);
-                  const prof = PROFESSIONALS.find((p) => p.name === actor);
+                  const prof = PROFESSIONALS.find(
+                    (p) =>
+                      p.name.trim().toLowerCase() === actor.trim().toLowerCase() ||
+                      p.name.toLowerCase().includes(actor.toLowerCase()) ||
+                      actor.toLowerCase().includes(p.name.toLowerCase())
+                  );
                   if (prof) {
                     handleProfessionalClick(prof.id);
                   }
@@ -505,7 +510,7 @@ export default function Home() {
 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="p-4 rounded-lg bg-slate-800/50">
-                    <p className="text-slate-400 text-sm mb-1">Casos en Plataforma</p>
+                    <p className="text-slate-400 text-sm mb-1">Casos aaen Plataforma</p>
                     <p className="text-2xl font-bold text-white">
                       {selectedProfessional.casesCount}
                     </p>
@@ -533,7 +538,7 @@ export default function Home() {
                       key={caseItem.id}
                       onClick={() => handleCaseClick(caseItem.id)}
                     >
-                      <CaseCard {...caseItem} onClick={() => {}} />
+                      <CaseCard {...caseItem} onClick={() => { }} />
                     </div>
                   ))
                 ) : (
